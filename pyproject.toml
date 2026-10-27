@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llama-index-retrievers-schemagate"
+version = "0.1.0"
+description = "LlamaIndex retriever that sends a text-to-SQL model only the tables a question needs, from the ones the caller may read"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Ashish Sinha" }]
+requires-python = ">=3.10"
+dependencies = ["schemagate>=1.14", "llama-index-core>=0.12"]
+keywords = ["llamaindex", "llama-index", "text-to-sql", "nl2sql", "schema-selection", "retriever", "access-control"]
+classifiers = ["Programming Language :: Python :: 3", "Topic :: Database"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/ashishsinha1602/llama-index-retrievers-schemagate"
+Documentation = "https://github.com/ashishsinha1602/schemagate/blob/main/docs/llamaindex.md"
+"schemagate" = "https://github.com/ashishsinha1602/schemagate"
+
+[tool.hatch.build.targets.wheel]
+packages = ["llama_index"]
